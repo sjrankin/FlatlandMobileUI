@@ -2,8 +2,8 @@
 //  Versioning.swift
 //  Flatland Mobile
 //
-//  Created by Stuart Rankin on 7/18/2021.
-//  Copyright © 2020 Stuart Rankin. All rights reserved.
+//  Created by Stuart Rankin on 7/18/2021. Adapted from Flatland View.
+//  Copyright © 2020, 2021 Stuart Rankin. All rights reserved.
 //
 
 import Foundation
