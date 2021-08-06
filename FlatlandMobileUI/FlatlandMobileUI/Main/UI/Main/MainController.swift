@@ -17,6 +17,12 @@ class MainController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        FileIO.Initialize()
+        Settings.Initialize()
+        Settings.UpdateForFeatureLevel()
+        Settings.AddSubscriber(self)
+        
         ElapsedTimeValue = 0.0
         
         MainTimeLabelTop.text = ""
@@ -39,10 +45,7 @@ class MainController: UIViewController
         
         MainController.StartTime = CACurrentMediaTime()
         UptimeStart = CACurrentMediaTime()
-        FileIO.Initialize()
-        Settings.Initialize()
-        Settings.UpdateForFeatureLevel()
-        Settings.AddSubscriber(self)
+
         SoundManager.Initialize()
         CityManager.Initialize()
         
