@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		172A7EB626B70DCC0077DFB5 /* PhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172A7EB526B70DCC0077DFB5 /* PhotoLibrary.swift */; };
 		172A7EBA26B72ABD0077DFB5 /* EarthquakeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172A7EB926B72ABD0077DFB5 /* EarthquakeSettings.swift */; };
+		178A9B7926BDA89B007E1382 /* CIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178A9B7826BDA89B007E1382 /* CIImage.swift */; };
 		178C449826BCBE2D00E37823 /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C449726BCBE2C00E37823 /* BinarySearchTree.swift */; };
 		17A3BBED26B37CE500C5B477 /* GlobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A3BBCC26B37CE400C5B477 /* GlobeView.swift */; };
 		17A3BBEE26B37CE500C5B477 /* GlobeViewOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A3BBCD26B37CE500C5B477 /* GlobeViewOld.swift */; };
@@ -258,6 +259,7 @@
 /* Begin PBXFileReference section */
 		172A7EB526B70DCC0077DFB5 /* PhotoLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibrary.swift; sourceTree = "<group>"; };
 		172A7EB926B72ABD0077DFB5 /* EarthquakeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeSettings.swift; sourceTree = "<group>"; };
+		178A9B7826BDA89B007E1382 /* CIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIImage.swift; sourceTree = "<group>"; };
 		178C449726BCBE2C00E37823 /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
 		17A3BBCC26B37CE400C5B477 /* GlobeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobeView.swift; sourceTree = "<group>"; };
 		17A3BBCD26B37CE500C5B477 /* GlobeViewOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobeViewOld.swift; sourceTree = "<group>"; };
@@ -1077,22 +1079,23 @@
 			isa = PBXGroup;
 			children = (
 				17D310AD26B3783B005FAE3A /* Array.swift */,
-				17D310AE26B3783B005FAE3A /* UInt.swift */,
-				17D310AF26B3783B005FAE3A /* UIColor.swift */,
-				17D310B026B3783B005FAE3A /* Timer.swift */,
-				17D310B126B3783B005FAE3A /* UInt8.swift */,
-				17D310B226B3783B005FAE3A /* UUID.swift */,
-				17D310B326B3783B005FAE3A /* UInt64.swift */,
-				17D310B426B3783B005FAE3A /* Int64.swift */,
-				17D310B526B3783B005FAE3A /* Int.swift */,
-				17D310B626B3783B005FAE3A /* UIImage.swift */,
-				17D310B726B3783B005FAE3A /* SCNVector3.swift */,
-				17D310B826B3783B005FAE3A /* CGFloat.swift */,
-				17D310B926B3783B005FAE3A /* SCNVector4.swift */,
 				17D310BA26B3783B005FAE3A /* Double.swift */,
-				17D310BB26B3783B005FAE3A /* UIFont.swift */,
-				17D310BC26B3783B005FAE3A /* OpaquePointer.swift */,
+				17D310B826B3783B005FAE3A /* CGFloat.swift */,
+				178A9B7826BDA89B007E1382 /* CIImage.swift */,
 				17D310BD26B3783B005FAE3A /* Float.swift */,
+				17D310B526B3783B005FAE3A /* Int.swift */,
+				17D310B426B3783B005FAE3A /* Int64.swift */,
+				17D310BC26B3783B005FAE3A /* OpaquePointer.swift */,
+				17D310B726B3783B005FAE3A /* SCNVector3.swift */,
+				17D310B926B3783B005FAE3A /* SCNVector4.swift */,
+				17D310B026B3783B005FAE3A /* Timer.swift */,
+				17D310AF26B3783B005FAE3A /* UIColor.swift */,
+				17D310BB26B3783B005FAE3A /* UIFont.swift */,
+				17D310AE26B3783B005FAE3A /* UInt.swift */,
+				17D310B126B3783B005FAE3A /* UInt8.swift */,
+				17D310B626B3783B005FAE3A /* UIImage.swift */,
+				17D310B326B3783B005FAE3A /* UInt64.swift */,
+				17D310B226B3783B005FAE3A /* UUID.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1392,6 +1395,7 @@
 				17A3BF6226B3A6D100AE692D /* +MainEventHandling.swift in Sources */,
 				17D3111726B3783C005FAE3A /* EnumColors.swift in Sources */,
 				172A7EBA26B72ABD0077DFB5 /* EarthquakeSettings.swift in Sources */,
+				178A9B7926BDA89B007E1382 /* CIImage.swift in Sources */,
 				17A3BC1026B37DA700C5B477 /* FlatlandEventProtocol.swift in Sources */,
 				17D310A526B376E5005FAE3A /* +NodeState.swift in Sources */,
 				17D30F8526B376B7005FAE3A /* Settings.swift in Sources */,
