@@ -21,7 +21,8 @@ class NodeTables
     /// - Parameter Unesco: Array of World Heritage Sites.
     public static func Initialize(Unesco: [WorldHeritageSite])
     {
-        for SomeCity in CityManager.AllCities!
+//        for SomeCity in CityManager.AllCities!
+                for SomeCity in CityManager.GetAllCities()
         {
             CityTable[SomeCity.CityID] = DisplayItem(ID: SomeCity.CityID, ItemType: .City, Name: SomeCity.Name,
                                                      Numeric: Double(SomeCity.GetPopulation()),
