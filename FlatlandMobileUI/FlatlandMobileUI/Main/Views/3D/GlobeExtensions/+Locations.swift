@@ -200,37 +200,25 @@ extension GlobeView
         PlottedCities.append(CityNode)
     }
     
-    #if false
     /// Create a material that is essentially a square with the passed color and a black border.
     /// - Parameter With: The color of the center of the material.
-    /// - Returns: `SCNMaterial` of the bordered color.
-    func MakeOutlineCubeTexture(With Color: UIColor) -> SCNMaterial
+    /// - Returns: `UIImage` of the bordered color.
+    func MakeOutlineCubeTexture(With Color: UIColor) -> UIImage
     {
         let Outline = UIImage(named: "BlockTexture2")
+        let OutlineImage = CIImage(image: Outline!)!
         let OutlineSize = Outline?.size
         let bsize = CGSize(width: OutlineSize!.width / 2, height: OutlineSize!.height / 2)
-        let Bottom = UIImage(size: bsize)
-        Bottom.lockFocus()
-        Color.drawSwatch(in: CGRect(origin: .zero, size: bsize))
-        Bottom.unlockFocus()
-        
-        let OutlineData = Outline?.tiffRepresentation
-        let OutlineImage = CIImage(data: OutlineData!)
-        let BottomData = Bottom.tiffRepresentation
-        let BottomImage = CIImage(data: BottomData!)
+        let Bottom = UIImage(Color: Color, Size: bsize)
+        let BottomImage = CIImage(image: Bottom)!
         let Filter = CIFilter.sourceAtopCompositing()
         Filter.setDefaults()
         Filter.inputImage = OutlineImage
         Filter.backgroundImage = BottomImage
-        let ResultImage = Filter.outputImage
-        let Rep = NSCIImageRep(ciImage: ResultImage!)
-        let Final = UIImage(size: OutlineSize!)
-        Final.addRepresentation(Rep)
-        let Material = SCNMaterial()
-        Material.diffuse.contents = Final
-        return Material
+        let Filtered = Filter.outputImage!
+        let Final = Filtered.AsUIImage()!
+        return Final
     }
-    #endif
     
     /// Plot a city in the shape of a pyramid.
     /// - Parameter Plot: The city to plot.
@@ -429,18 +417,21 @@ extension GlobeView
             let Side = CitySize * 2.0
             let Box = SCNBox(width: Side, height: Side, length: Side, chamferRadius: 0.05)
             CityNode = SCNNode2(geometry: Box)
-            #if true
+            #if false
             let SideImage = UIColor.DrawSwatch(Color: WithColor, InRect: CGRect(origin: CGPoint(x: 0, y: 0),
                                                                 size: CGSize(width: 50, height: 50)))
             #else
             let SideImage = MakeOutlineCubeTexture(With: WithColor)
             CityNode.geometry?.materials.removeAll()
-            CityNode.geometry?.materials.append(SideImage)
-            CityNode.geometry?.materials.append(SideImage)
-            CityNode.geometry?.materials.append(SideImage)
-            CityNode.geometry?.materials.append(SideImage)
-            CityNode.geometry?.materials.append(SideImage)
-            CityNode.geometry?.materials.append(SideImage)
+            let SideMaterial = SCNMaterial()
+            SideMaterial.diffuse.contents = SideImage
+            SideMaterial.locksAmbientWithDiffuse = true
+            CityNode.geometry?.materials.append(SideMaterial)
+            CityNode.geometry?.materials.append(SideMaterial)
+            CityNode.geometry?.materials.append(SideMaterial)
+            CityNode.geometry?.materials.append(SideMaterial)
+            CityNode.geometry?.materials.append(SideMaterial)
+            CityNode.geometry?.materials.append(SideMaterial)
             #endif
             CityNode.geometry?.firstMaterial?.specular.contents = UIColor.white
             CityNode.HasImageTextures = true
@@ -555,18 +546,16 @@ extension GlobeView
         {
             let CityShape = SCNBox(width: HDim, height: CitySize, length: HDim, chamferRadius: 0.02)
             CityNode = SCNNode2(geometry: CityShape)
-            //let SideImage = MakeOutlineCubeTexture(With: WithColor)
-            let SideImage = UIColor.DrawSwatch(Color: WithColor, InRect: CGRect(origin: CGPoint(x: 0, y: 0),
-                                                                                size: CGSize(width: 50, height: 50)))
-            #if false
+            let SideImage = MakeOutlineCubeTexture(With: WithColor)
+            let CubeSide = SCNMaterial()
+            CubeSide.diffuse.contents = SideImage
             CityNode.geometry?.materials.removeAll()
-            CityNode.geometry?.materials.append(SideImage)
-            CityNode.geometry?.materials.append(SideImage)
-            CityNode.geometry?.materials.append(SideImage)
-            CityNode.geometry?.materials.append(SideImage)
-            CityNode.geometry?.materials.append(SideImage)
-            CityNode.geometry?.materials.append(SideImage)
-            #endif
+            CityNode.geometry?.materials.append(CubeSide)
+            CityNode.geometry?.materials.append(CubeSide)
+            CityNode.geometry?.materials.append(CubeSide)
+            CityNode.geometry?.materials.append(CubeSide)
+            CityNode.geometry?.materials.append(CubeSide)
+            CityNode.geometry?.materials.append(CubeSide)
             if Settings.GetBool(.CityNodesGlow)
             {
                 for Material in CityNode.geometry!.materials
