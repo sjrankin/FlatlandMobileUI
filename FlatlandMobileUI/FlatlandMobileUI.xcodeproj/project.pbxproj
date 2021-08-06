@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		172A7EB626B70DCC0077DFB5 /* PhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172A7EB526B70DCC0077DFB5 /* PhotoLibrary.swift */; };
 		172A7EBA26B72ABD0077DFB5 /* EarthquakeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172A7EB926B72ABD0077DFB5 /* EarthquakeSettings.swift */; };
+		178C449826BCBE2D00E37823 /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C449726BCBE2C00E37823 /* BinarySearchTree.swift */; };
 		17A3BBED26B37CE500C5B477 /* GlobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A3BBCC26B37CE400C5B477 /* GlobeView.swift */; };
 		17A3BBEE26B37CE500C5B477 /* GlobeViewOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A3BBCD26B37CE500C5B477 /* GlobeViewOld.swift */; };
 		17A3BBEF26B37CE500C5B477 /* GlobeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A3BBCE26B37CE500C5B477 /* GlobeProtocol.swift */; };
@@ -250,11 +251,14 @@
 		17D3111526B3783C005FAE3A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D310E226B3783B005FAE3A /* Constants.swift */; };
 		17D3111626B3783C005FAE3A /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D310E326B3783B005FAE3A /* Enums.swift */; };
 		17D3111726B3783C005FAE3A /* EnumColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D310E426B3783B005FAE3A /* EnumColors.swift */; };
+		17D33ACB26BAF855008BC42F /* CitySettings2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D33ACA26BAF855008BC42F /* CitySettings2.swift */; };
+		17D33ACD26BCA87E008BC42F /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D33ACC26BCA87E008BC42F /* Screens.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		172A7EB526B70DCC0077DFB5 /* PhotoLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibrary.swift; sourceTree = "<group>"; };
 		172A7EB926B72ABD0077DFB5 /* EarthquakeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthquakeSettings.swift; sourceTree = "<group>"; };
+		178C449726BCBE2C00E37823 /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
 		17A3BBCC26B37CE400C5B477 /* GlobeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobeView.swift; sourceTree = "<group>"; };
 		17A3BBCD26B37CE500C5B477 /* GlobeViewOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobeViewOld.swift; sourceTree = "<group>"; };
 		17A3BBCE26B37CE500C5B477 /* GlobeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobeProtocol.swift; sourceTree = "<group>"; };
@@ -498,6 +502,8 @@
 		17D310E226B3783B005FAE3A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		17D310E326B3783B005FAE3A /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		17D310E426B3783B005FAE3A /* EnumColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumColors.swift; sourceTree = "<group>"; };
+		17D33ACA26BAF855008BC42F /* CitySettings2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySettings2.swift; sourceTree = "<group>"; };
+		17D33ACC26BCA87E008BC42F /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -572,6 +578,7 @@
 				17A3BF5326B3A5D100AE692D /* MainExtensions */,
 				17A3BF5026B3A52100AE692D /* MainController.swift */,
 				17A899C626B344CD008FD0DF /* Main.storyboard */,
+				17D33ACC26BCA87E008BC42F /* Screens.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -692,6 +699,7 @@
 				17C33EED26B5EBFF0073A9E8 /* MapAttributes.swift */,
 				17C33EF326B612060073A9E8 /* GeneralSettings.swift */,
 				172A7EB926B72ABD0077DFB5 /* EarthquakeSettings.swift */,
+				17D33ACA26BAF855008BC42F /* CitySettings2.swift */,
 			);
 			path = SubSettings;
 			sourceTree = "<group>";
@@ -712,15 +720,15 @@
 		17D30F3726B376A7005FAE3A /* Databases */ = {
 			isa = PBXGroup;
 			children = (
-				17D30F3826B376A7005FAE3A /* +Query.swift */,
-				17D30F3926B376A7005FAE3A /* +HistoricEarthquakes.swift */,
 				17D30F3A26B376A7005FAE3A /* SettingsDBIF */,
 				17D30F3F26B376A7005FAE3A /* +Cities.swift */,
-				17D30F4026B376A7005FAE3A /* +POI.swift */,
-				17D30F4126B376A7005FAE3A /* +LocationCache.swift */,
-				17D30F4226B376A7005FAE3A /* SQL.swift */,
-				17D30F4326B376A7005FAE3A /* +RegionsData.swift */,
 				17D30F4426B376A7005FAE3A /* DBIF.swift */,
+				17D30F3926B376A7005FAE3A /* +HistoricEarthquakes.swift */,
+				17D30F4126B376A7005FAE3A /* +LocationCache.swift */,
+				17D30F4026B376A7005FAE3A /* +POI.swift */,
+				17D30F3826B376A7005FAE3A /* +Query.swift */,
+				17D30F4326B376A7005FAE3A /* +RegionsData.swift */,
+				17D30F4226B376A7005FAE3A /* SQL.swift */,
 				17D30F4526B376A7005FAE3A /* +WorldHeritageSites.swift */,
 			);
 			path = Databases;
@@ -1133,9 +1141,10 @@
 		17D310CA26B3783B005FAE3A /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
+				178C449726BCBE2C00E37823 /* BinarySearchTree.swift */,
+				17D310CD26B3783B005FAE3A /* Queue.swift */,
 				17D310CB26B3783B005FAE3A /* Stack.swift */,
 				17D310CC26B3783B005FAE3A /* Tree.swift */,
-				17D310CD26B3783B005FAE3A /* Queue.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -1285,6 +1294,7 @@
 				17D3107526B376E5005FAE3A /* MapManager.swift in Sources */,
 				17C33EEE26B5EBFF0073A9E8 /* MapAttributes.swift in Sources */,
 				17D310EB26B3783C005FAE3A /* UInt64.swift in Sources */,
+				178C449826BCBE2D00E37823 /* BinarySearchTree.swift in Sources */,
 				17A3BBF726B37CE500C5B477 /* +Rotations.swift in Sources */,
 				17D3104726B376E5005FAE3A /* MetalLibrary.swift in Sources */,
 				17D3105D26B376E5005FAE3A /* +SimpleShapes.swift in Sources */,
@@ -1314,6 +1324,7 @@
 				17A3BC0026B37CE500C5B477 /* +Attract.swift in Sources */,
 				17D310EE26B3783C005FAE3A /* UIImage.swift in Sources */,
 				17A3BF5E26B3A6D100AE692D /* +Threading.swift in Sources */,
+				17D33ACB26BAF855008BC42F /* CitySettings2.swift in Sources */,
 				17D3107A26B376E5005FAE3A /* POIManager.swift in Sources */,
 				17D310F826B3783C005FAE3A /* Date.swift in Sources */,
 				17D30F7C26B376AF005FAE3A /* +EarthquakeSettings.swift in Sources */,
@@ -1330,6 +1341,7 @@
 				17D3110B26B3783C005FAE3A /* Internet.swift in Sources */,
 				17D30F4626B376A7005FAE3A /* +Query.swift in Sources */,
 				17A3BBFA26B37CE500C5B477 /* +Axes.swift in Sources */,
+				17D33ACD26BCA87E008BC42F /* Screens.swift in Sources */,
 				17A3BBF126B37CE500C5B477 /* +Initialize.swift in Sources */,
 				17D30F8926B376C0005FAE3A /* SettingKeysMap.swift in Sources */,
 				17D3111026B3783C005FAE3A /* K-Means.swift in Sources */,
