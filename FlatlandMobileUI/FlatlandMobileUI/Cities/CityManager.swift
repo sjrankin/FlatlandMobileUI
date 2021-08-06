@@ -14,17 +14,26 @@ class CityManager
     /// Initialize the City Manager. Loads all cities from the database.
     public static func Initialize()
     {
-#if true
         AllCities = Settings.GetCities(.CityList)
         OtherCities = Settings.GetCities(.UserCityList)
-#else
-        AllCities = MainController.GetAllCities()
-        OtherCities = MainController.GetAllAdditionalCities()
-#endif
     }
     
     /// All cities from the database.
-    public static var AllCities: [City2]? = nil
+    private static var AllCities: [City2]? = nil
+    {
+        didSet
+        {
+            let Trace = Debug.StackFrameContents(10)
+            let PrettyTrace = Debug.PrettyStackTrace(Trace)
+            Debug.Print("AllCities[\(AllCities!.count)]: \(PrettyTrace)")
+        }
+    }
+    /*
+    public static func GetAllCities() -> [City2]?
+    {
+        return AllCities
+    }
+     */
     
     /// All cities from the other/additional cities database.
     public static var OtherCities: [City2]? = nil
@@ -527,6 +536,10 @@ class CityManager
     /// - Returns: Array of cities based on the user settings.
     public static func FilteredCities() -> [City2]
     {
+        #if true
+        let CurrentCities = GetAllCities()
+                return FilteredCities(In: CurrentCities)
+        #else
         if AllCities != nil
         {
             return FilteredCities(In: AllCities!)
@@ -535,6 +548,7 @@ class CityManager
         {
             return [City2]()
         }
+        #endif
     }
     
     /// Return an array of cities based on the user-settings filter.
@@ -542,10 +556,10 @@ class CityManager
     /// - Returns: Array of cities based on the user settings.
     public static func FilteredCities(In SourceList: [City2]) -> [City2]
     {
-        if AllCities == nil
-        {
-            return [City2]()
-        }
+        //if AllCities == nil
+        //{
+        //    return [City2]()
+        //}
         if Settings.GetBool(.ShowCitiesByPopulation)
         {
             switch Settings.GetEnum(ForKey: .PopulationFilterType, EnumType: PopulationFilterTypes.self,
@@ -554,7 +568,8 @@ class CityManager
                 case .ByRank:
                     let Rank = Settings.GetInt(.PopulationRank)
                     let IsMetro = Settings.GetBool(.PopulationRankIsMetro)
-                    let TopCities = TopNCities(In: AllCities!, N: Rank, UseMetroPopulation: IsMetro)
+                    //let TopCities = TopNCities(In: AllCities!, N: Rank, UseMetroPopulation: IsMetro)
+                    let TopCities = TopNCities(In: SourceList, N: Rank, UseMetroPopulation: IsMetro)
                     return TopCities
                     
                 case .ByPopulation:
@@ -562,7 +577,8 @@ class CityManager
                     let ComparedTo = Settings.GetInt(.PopulationFilterValue, IfZero: 1000000)
                     let UseMetro = Settings.GetBool(.PopulationRankIsMetro)
                     var TopCities = [City2]()
-                    for SomeCity in AllCities!
+//                    for SomeCity in AllCities!
+                    for SomeCity in SourceList
                     {
                         if GreaterThan
                         {
@@ -637,8 +653,17 @@ class CityManager
             Filters.append(.SouthAmerican)
         }
         
-        let CitySet = GetCities(In: AllCities!, FilteredBy: Filters)
+        //let CitySet = GetCities(In: AllCities!, FilteredBy: Filters)
+        let CitySet = GetCities(In: SourceList, FilteredBy: Filters)
         return Array(CitySet)
+    }
+    
+    public static func FilteredCities2() -> [City2]
+    {
+        let CurrentCities = GetAllCities()
+        let Rank = Settings.GetInt(.PopulationRank)
+        let TopCities = TopNCities(In: CurrentCities, N: Rank, UseMetroPopulation: true)
+        return TopCities
     }
     
     /// Returns a set of cities from the passed array based on `FilteredBy`.
