@@ -765,7 +765,7 @@ extension GlobeView
             }
         }
         PlottedCities.removeAll()
-        CitiesToPlot = CityManager.FilteredCities()
+        CitiesToPlot = CityManager.FilteredCities2()
         if let UserCities = CityManager.OtherCities
         {
             CitiesToPlot.append(contentsOf: UserCities)
