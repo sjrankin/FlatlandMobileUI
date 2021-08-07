@@ -11,6 +11,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--TestNavigator-->
+        <scene sceneID="03E-Gj-tZq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainTestView" referencedIdentifier="TestNavigator" id="WPb-on-D9s" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="iZI-LN-IAg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dqi-AP-wcJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="946" y="70"/>
+        </scene>
         <!--InitialSettings-->
         <scene sceneID="0WU-vj-Op8">
             <objects>
@@ -33,12 +43,12 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hct-0V-Wog">
-                                        <rect key="frame" x="10" y="8" width="83.5" height="54.5"/>
+                                        <rect key="frame" x="10" y="10" width="76" height="50"/>
                                         <color key="tintColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title=""/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <imageReference key="image" image="wrench.and.screwdriver" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30" scale="large" weight="black"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30" scale="large" weight="regular"/>
                                             <color key="baseForegroundColor" name="ControlButtonColor"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -46,16 +56,29 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9Q-no-yAC">
-                                        <rect key="frame" x="320" y="10" width="84" height="50"/>
+                                        <rect key="frame" x="327" y="10" width="77" height="50"/>
                                         <color key="tintColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title=""/>
                                         <buttonConfiguration key="configuration" style="plain" imagePlacement="leading">
                                             <imageReference key="image" image="camera" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30" scale="large" weight="black"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30" scale="large" weight="regular"/>
                                             <color key="baseForegroundColor" name="ControlButtonColor"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="TakeSnapShot:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="ee1-C9-Zxc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sva-0Z-7N5">
+                                        <rect key="frame" x="173" y="10" width="68" height="50"/>
+                                        <color key="tintColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title=""/>
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="leading">
+                                            <imageReference key="image" image="testtube.2" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30" scale="large" weight="regular"/>
+                                            <color key="baseForegroundColor" name="ControlButtonColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="WPb-on-D9s" kind="show" id="Ubh-Mg-Hpo"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -65,14 +88,16 @@
                                     <constraint firstItem="hct-0V-Wog" firstAttribute="centerY" secondItem="2vr-gu-Jne" secondAttribute="centerY" id="DL7-Gm-xvY"/>
                                     <constraint firstItem="hct-0V-Wog" firstAttribute="leading" secondItem="2vr-gu-Jne" secondAttribute="leading" constant="10" id="MQ9-nP-Bdl"/>
                                     <constraint firstItem="O9Q-no-yAC" firstAttribute="centerY" secondItem="2vr-gu-Jne" secondAttribute="centerY" id="N8Z-aM-gWL"/>
+                                    <constraint firstItem="Sva-0Z-7N5" firstAttribute="centerX" secondItem="2vr-gu-Jne" secondAttribute="centerX" id="QRf-6M-cTM"/>
                                     <constraint firstAttribute="height" constant="70" id="RW1-wA-VZ0"/>
+                                    <constraint firstItem="Sva-0Z-7N5" firstAttribute="centerY" secondItem="2vr-gu-Jne" secondAttribute="centerY" id="kwz-Q8-2pL"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SOH-lZ-wws">
                                 <rect key="frame" x="0.0" y="114" width="414" height="782"/>
                                 <subviews>
                                     <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" jitteringEnabled="YES" allowsCameraControl="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U1m-CO-Q7x" customClass="GlobeView" customModule="FlatlandMobileUI" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="5" width="404" height="772"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="782"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </sceneKitView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmn-dG-MB6">
@@ -85,7 +110,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00 UTC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKY-cB-Gwn">
-                                        <rect key="frame" x="46.5" y="722" width="321" height="60"/>
+                                        <rect key="frame" x="46.5" y="727" width="321" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="eOp-6a-o1S"/>
                                         </constraints>
@@ -98,11 +123,11 @@
                                 <constraints>
                                     <constraint firstItem="Tmn-dG-MB6" firstAttribute="top" secondItem="SOH-lZ-wws" secondAttribute="topMargin" id="4m7-sI-ouu"/>
                                     <constraint firstItem="U1m-CO-Q7x" firstAttribute="centerX" secondItem="SOH-lZ-wws" secondAttribute="centerX" id="5Wq-8w-zzb"/>
-                                    <constraint firstAttribute="trailing" secondItem="U1m-CO-Q7x" secondAttribute="trailing" constant="5" id="HYg-mr-s21"/>
+                                    <constraint firstAttribute="trailing" secondItem="U1m-CO-Q7x" secondAttribute="trailing" id="HYg-mr-s21"/>
                                     <constraint firstItem="sKY-cB-Gwn" firstAttribute="bottom" secondItem="U1m-CO-Q7x" secondAttribute="bottom" constant="5" id="J3o-iz-8xV"/>
-                                    <constraint firstAttribute="bottom" secondItem="U1m-CO-Q7x" secondAttribute="bottom" constant="5" id="Vq5-ol-Ucx"/>
-                                    <constraint firstItem="U1m-CO-Q7x" firstAttribute="top" secondItem="SOH-lZ-wws" secondAttribute="top" constant="5" id="XXq-IU-X99"/>
-                                    <constraint firstItem="U1m-CO-Q7x" firstAttribute="leading" secondItem="SOH-lZ-wws" secondAttribute="leading" constant="5" id="tPS-kI-F8u"/>
+                                    <constraint firstAttribute="bottom" secondItem="U1m-CO-Q7x" secondAttribute="bottom" id="Vq5-ol-Ucx"/>
+                                    <constraint firstItem="U1m-CO-Q7x" firstAttribute="top" secondItem="SOH-lZ-wws" secondAttribute="top" id="XXq-IU-X99"/>
+                                    <constraint firstItem="U1m-CO-Q7x" firstAttribute="leading" secondItem="SOH-lZ-wws" secondAttribute="leading" id="tPS-kI-F8u"/>
                                     <constraint firstItem="Tmn-dG-MB6" firstAttribute="centerX" secondItem="U1m-CO-Q7x" secondAttribute="centerX" id="yP8-vF-Wcq"/>
                                     <constraint firstItem="sKY-cB-Gwn" firstAttribute="centerX" secondItem="SOH-lZ-wws" secondAttribute="centerX" id="yQc-9T-u7y"/>
                                     <constraint firstItem="Tmn-dG-MB6" firstAttribute="leading" secondItem="SOH-lZ-wws" secondAttribute="leading" constant="27" id="z8Q-qu-UAq"/>
@@ -127,6 +152,7 @@
                         <outlet property="Main3DView" destination="U1m-CO-Q7x" id="VkD-jh-P6D"/>
                         <outlet property="MainTimeLabelBottom" destination="sKY-cB-Gwn" id="zhc-Xv-a04"/>
                         <outlet property="MainTimeLabelTop" destination="Tmn-dG-MB6" id="XAY-9a-eWR"/>
+                        <outlet property="TestSomethngButton" destination="Sva-0Z-7N5" id="VT7-eP-pvF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -136,6 +162,7 @@
     </scenes>
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
+        <image name="testtube.2" catalog="system" width="128" height="118"/>
         <image name="wrench.and.screwdriver" catalog="system" width="128" height="120"/>
         <namedColor name="ControlBarColor">
             <color red="0.26100000739097595" green="0.26100000739097595" blue="0.26100000739097595" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
