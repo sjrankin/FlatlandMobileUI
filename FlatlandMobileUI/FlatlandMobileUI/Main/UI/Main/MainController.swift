@@ -43,6 +43,11 @@ class MainController: UIViewController
             Settings.SetBool(.ShowInitialVersion, false)
         }
         
+        #if DEBUG
+        #else
+        TestSomethngButton.removeFromSuperview()
+        #endif
+        
         MainController.StartTime = CACurrentMediaTime()
         UptimeStart = CACurrentMediaTime()
 
@@ -180,6 +185,13 @@ class MainController: UIViewController
     {
         Debug.Print("Stenciling completed.")
     }
+    
+    #if DEBUG
+    @IBAction func TestSomething(_ sender: Any)
+    {
+        
+    }
+    #endif
     
     /// Respond to the user command to take a snapshot of the current view.
     /// - Parameter sender: Not used.
@@ -359,6 +371,8 @@ class MainController: UIViewController
     @IBOutlet var Main3DView: GlobeView!
     @IBOutlet weak var MainTimeLabelTop: UILabel!
     @IBOutlet weak var MainTimeLabelBottom: UILabel!
+    
+    @IBOutlet weak var TestSomethngButton: UIButton!
     
     var ChangeDelta: Double = 0.0
     var PreviousMemoryUsed: UInt64? = nil
