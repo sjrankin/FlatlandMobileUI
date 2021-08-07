@@ -50,7 +50,7 @@ class MapAttributes: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
                 DarkIndex = 0
                 
             case .Light:
-                    DarkIndex = 1
+                DarkIndex = 1
                 
             case .Dark:
                 DarkIndex = 2
@@ -149,11 +149,13 @@ class MapAttributes: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
                 Label.bounds = CGRect(origin: .zero, size: CGSize(width: 300, height: 22))
                 Label.frame = CGRect(x: 50, y: 2, width: 400, height: 22)
                 SomeView.addSubview(Label)
+                SomeView.bounds = CGRect(x: -40, y: 2, width: 250, height: 22)
                 return SomeView
                 
             case FlatDarknessPicker:
                 let Label = UILabel()
                 Label.text = DarkLevels[row]
+                Label.textAlignment = .center
                 return Label
                 
             default:
