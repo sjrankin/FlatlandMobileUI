@@ -139,6 +139,7 @@ class SoundManager
     ///                           by settings code.
     public static func Play(Name: String, OverrideMute: Bool = false)
     {
+        PlaySound(With: "NHKPips")
         if Settings.GetBool(.EnableSounds)
         {
             if !OverrideMute
@@ -153,11 +154,7 @@ class SoundManager
                 PlayBundleSound(Name)
                 return
             }
-#if true
             PlaySound(With: Name)
-#else
-            NSSound(named: Name)?.play()
-#endif
         }
     }
     
@@ -166,10 +163,24 @@ class SoundManager
     //https://stackoverflow.com/questions/32036146/how-to-play-a-sound-using-swift
     private static func PlaySound(With Name: String)
     {
+#if true
+        let path = Bundle.main.path(forResource: "Sounds/NHKPips", ofType: "mp3")!
+        let url = URL(fileURLWithPath: path)
+        Debug.Print("Sound URL=\(url.path)")
+        do
+        {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        }
+        catch
+        {
+            Debug.Print("Error playing sound: \(Name): \(error)")
+            return
+        }
+#else
         guard let url = Bundle.main.url(forResource: "soundName", withExtension: "mp3") else
         {
             return
-            
         }
         
         do {
@@ -178,9 +189,6 @@ class SoundManager
             
             /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-            
-            /* iOS 10 and earlier require the following line:
-             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
             
             guard let player = player else
             {
@@ -195,6 +203,7 @@ class SoundManager
         {
             print(error.localizedDescription)
         }
+        #endif
     }
     
     private static func IsAsset(_ Name: String) -> Bool
