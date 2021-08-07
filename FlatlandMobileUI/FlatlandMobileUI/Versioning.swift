@@ -50,6 +50,9 @@ public class Versioning: CustomStringConvertible
     /// The intended OS for the program.
     public static let IntendedOS: String = "iOS"
     
+    /// Minimum supported OS version.
+    public static let MinimumOS: String = "14.7"
+    
     /// Value to control which features are available. For features that implement the scheme, a level that
     /// is the same or lower is required in order for that feature to be enabled.
     public static let FeatureLevel: Int = 1
@@ -122,19 +125,19 @@ public class Versioning: CustomStringConvertible
     }
     
     /// Build number. Incremented every build (provided the proper script is executed at each build).
-    public static let Build: Int = 503
+    public static let Build: Int = 558
     
     /// Build increment. Value to use to increment the build number.
     private static let BuildIncrement = 1
     
     /// Build ID.
-    public static let BuildID: String = "BC52EA2F-4773-4524-860F-673925819327"
+    public static let BuildID: String = "0853763D-5A87-4F10-88E4-A557EEDED712"
     
     /// Build date.
-    public static let BuildDate: String = "6 August 2021"
+    public static let BuildDate: String = "7 August 2021"
     
     /// Build Time.
-    public static let BuildTime: String = "10:39"
+    public static let BuildTime: String = "13:02"
     
     /// Holds the release build flag.
 #if DEBUG
