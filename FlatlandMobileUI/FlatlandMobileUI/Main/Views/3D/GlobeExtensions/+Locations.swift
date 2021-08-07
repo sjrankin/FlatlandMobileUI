@@ -200,7 +200,7 @@ extension GlobeView
         PlottedCities.append(CityNode)
     }
     
-    /// Create a material that is essentially a square with the passed color and a black border.
+    /// Create an image that is essentially a square with the passed color and a black border.
     /// - Parameter With: The color of the center of the material.
     /// - Returns: `UIImage` of the bordered color.
     func MakeOutlineCubeTexture(With Color: UIColor) -> UIImage
